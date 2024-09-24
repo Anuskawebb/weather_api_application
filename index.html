@@ -3,40 +3,152 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <title>Weather App</title>
 </head>
 <body>
-
-    <!-- title card-->
-
-    <div class="titlecard">
-        <p class="title"><span>weather</span></p>
-        <p class="desc">Get the weather details of your city right away!</p>
+    <div class="container">
+        <div class="sidebar">
+            <div class="search-section">
+                <input type="text" class="search-bar" id="city-input" placeholder="Enter city name">
+                <button class="search-button" id="search-button">Search</button>
+            </div>
+            <div class="weather-app-icon">
+                <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="Weather Icon" width="50" id="weather-icon">
+                <div class="current-temp" id="current-temp">--°C</div>
+                <div class="current-date" id="current-date">--</div>
+                <div class="current-city" id="current-city">--, --</div>
+            </div>
+        </div>
+        <div class="main-content">
+            <div class="highlights">
+                <h2>Today's Highlights</h2>
+                <table>
+                    <tr>
+                        <td>
+                            <div class="highlight-box">
+                                <span>Humidity</span>
+                                <p id="humidity">--%</p>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="highlight-box">
+                                <span>Wind Speed</span>
+                                <p id="wind-speed">-- km/h</p>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="highlight-box">
+                                <span>Sunset</span>
+                                <p id="sunset">--</p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="highlight-box">
+                                <span>Sunrise</span>
+                                <p id="sunrise">--</p>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="highlight-box">
+                                <span>Clouds</span>
+                                <p id="clouds">--%</p>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="highlight-box">
+                                <span>UV Index</span>
+                                <p id="uv-index">--</p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="highlight-box">
+                                <span>Pressure</span>
+                                <p id="pressure">-- hPa</p>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="highlight-box">
+                                <span>Feels Like</span>
+                                <p id="feels-like">--°C</p>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="highlight-box">
+                                <span>Visibility</span>
+                                <p id="visibility">-- km</p>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="forecast">
+                <h2>7-Day Weather Forecast</h2>
+                <table id="forecast-table">
+                    <tr>
+                        <td>
+                            <div class="forecast-box">
+                                <span id="day1">Monday</span>
+                                <p id="temp1">--°C</p>
+                                <img src="https://openweathermap.org/img/wn/01d@2x.png" alt="Weather Icon" width="30" id="icon1">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="forecast-box">
+                                <span id="day2">Tuesday</span>
+                                <p id="temp2">--°C</p>
+                                <img src="https://openweathermap.org/img/wn/02d@2x.png" alt="Weather Icon" width="30" id="icon2">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="forecast-box">
+                                <span id="day3">Wednesday</span>
+                                <p id="temp3">--°C</p>
+                                <img src="https://openweathermap.org/img/wn/03d@2x.png" alt="Weather Icon" width="30" id="icon3">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="forecast-box">
+                                <span id="day4">Thursday</span>
+                                <p id="temp4">--°C</p>
+                                <img src="https://openweathermap.org/img/wn/04d@2x.png" alt="Weather Icon" width="30" id="icon4">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="forecast-box">
+                                <span id="day5">Friday</span>
+                                <p id="temp5">--°C</p>
+                                <img src="https://openweathermap.org/img/wn/09d@2x.png" alt="Weather Icon" width="30" id="icon5">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="forecast-box">
+                                <span id="day6">Saturday</span>
+                                <p id="temp6">--°C</p>
+                                <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="Weather Icon" width="30" id="icon6">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="forecast-box">
+                                <span id="day7">Sunday</span>
+                                <p id="temp7">--°C</p>
+                                <img src="https://openweathermap.org/img/wn/11d@2x.png" alt="Weather Icon" width="30" id="icon7">
+                            </div>
+                        </td>
+                        <td colspan="2"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
     </div>
-
-    <!-- input card -->
-
-
-     <div class="card">
-        <input id="cityInput" class="inputBox" type="text" placeholder="Enter your City">
-        <button id="searchBtn" class="btnSearch">Search</button>
-     </div>
-
-     <!-- output card -->
-
-     <div id="outputCard" class="output">
-        <div class="cityNamecard">
-            <p id="cityName"></p>
-            <p id="countryName"></p>
-        </div>
-
-        <!-- temperature -->
-
-        <div class="tempCard">
-            <p id="temp"></p>
-        </div>
-     </div>
     <script src="script.js"></script>
 </body>
 </html>
