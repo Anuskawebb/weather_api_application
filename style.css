@@ -13,7 +13,7 @@ body {
     margin: auto;
     border-radius: 10px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-   
+    overflow: hidden;
 }
 
 .sidebar {
@@ -45,12 +45,13 @@ body {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.3s;
     margin-top: 10px;
 }
 
 .search-button:hover {
     background-color: #0056b3; 
+    transform: scale(1.05);
 }
 
 .weather-app-icon {
@@ -58,14 +59,34 @@ body {
     margin-bottom: 20px;
 }
 
+.weather-card {
+    background-color: #333;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.weather-card:hover {
+    transform: translateY(-5px);
+}
+
+.weather-card img {
+    margin-bottom: 10px;
+}
+
 .current-temp {
-    font-size: 24px;
+    font-size: 36px;
     font-weight: bold;
 }
 
 .current-date, .current-city {
-    font-size: 16px;
-    color: #dddddd; 
+    font-size: 14px;
+    color: #cccccc;
 }
 
 .main-content {
@@ -104,11 +125,12 @@ td {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    transition: box-shadow 0.3s;
+    transition: box-shadow 0.3s, transform 0.3s;
 }
 
 .highlight-box:hover, .forecast-box:hover {
     box-shadow: 0 2px 10px rgba(255, 255, 255, 0.2); 
+    transform: translateY(-5px);
 }
 
 .highlight-box span, .forecast-box p {
@@ -127,4 +149,37 @@ td {
 
 .forecast-box img {
     margin-top: 5px; 
+}
+
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; 
+    }
+
+    .sidebar {
+        width: 100%; 
+        border-right: none; 
+        border-bottom: 1px solid #444444; 
+    }
+
+    .main-content {
+        padding: 10px; 
+    }
+
+    .search-button {
+        width: 100%; 
+    }
+
+    .highlight-box, .forecast-box {
+        padding: 10px; 
+    }
+
+    h2 {
+        font-size: 18px; 
+    }
+
+    .current-temp {
+        font-size: 20px; 
+    }
 }
